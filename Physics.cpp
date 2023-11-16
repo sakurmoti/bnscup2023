@@ -11,6 +11,10 @@ Physics::Physics(double mass, Vec3 vel, Vec3 force, OrientedBox obj)
 	pos = obj.center;
 }
 
+void Physics::setMass(double _mass)
+{
+	this->mass = _mass;
+}
 
 void Physics::setPos(const Vec3& _pos)
 {
@@ -31,6 +35,7 @@ void Physics::setForce(const Vec3& _force)
 void Physics::setObj(const OrientedBox& _obj)
 {
 	this->obj = _obj;
+	this->pos = {_obj.x, _obj.y, _obj.z};
 }
 
 void Physics::draw() const

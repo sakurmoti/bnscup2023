@@ -14,6 +14,8 @@ public:
 
 	Physics(double mass, Vec3 vel, Vec3 force, OrientedBox obj);
 
+	void setMass(double mass);
+
 	void setPos(const Vec3& pos);
 
 	void setVel(const Vec3& vel);

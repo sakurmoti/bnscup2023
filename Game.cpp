@@ -10,11 +10,13 @@ Game::Game(const InitData& init)
 
 void Game::update()
 {
+	ClearPrint();
+	Print << U"camera pos : " << camera.getEyePosition();
 	double dt = Scene::DeltaTime();
 	camera.update(2.0);
 	Graphics3D::SetCameraTransform(camera);
 
-	hand.update(dt, camera);
+	//hand.update(dt, camera);
 	launcher.update(dt);
 	
 
@@ -28,7 +30,7 @@ void Game::draw() const
 		{
 			const ScopedRenderStates3D blend{ BlendState::OpaqueAlphaToCoverage };
 			Plane{ {0,-5,0}, 64 }.draw(uvChecker);
-			hand.draw(Palette::Red);
+			//hand.draw(Palette::Red);
 			launcher.draw();
 
 			//Box playArea = Box::FromPoints({ -20,-20,0 }, { 20,20,1 }).draw();
